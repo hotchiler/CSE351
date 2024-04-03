@@ -1,0 +1,24 @@
+******************************
+* Lab 1a Synthesis Questions *
+******************************
+Name(s): Ali Aldhahi, Darrick Nguyen   
+NetID(s): aaldhahi, darrick7
+
+
+-----------------------------------------------------------
+1) Use/Benefit and Equation:
+Pointer arithmetic is beneficial as it allows for effective traversal of data structures in memory.
+The relationship between arrays and pointers lies in the fact that the array name can be treated as a pointer to the first element of the array. a[i] = *(a + i).
+
+
+-----------------------------------------------------------
+2) Steps:
+By using the proper integer type to be able to support the pointer values, and casting pointers to integers of different sizes, we were able to avoid any compiler warnings. Then, the subtraction of the pointers allowed for an accurate byte-wise difference between two addresses.
+
+
+-----------------------------------------------------------
+3) Explain:
+The parameters must be pointers because the functions aims to interchange the values stored at the memory addresses. If the integers were the parameters, the function would leave the original values unchanged outside the function scope.
+
+
+-----------------------------------------------------------) 

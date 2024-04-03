@@ -1,0 +1,27 @@
+*****************************
+* Lab 3 Synthesis Questions *
+*****************************
+Name(s):  Ali Aldhahi, Darrick Nguyen
+NetID(s): aaldhahi, darrick7
+
+
+-----------------------------------------------------------
+1) Explain:  
+The value that gets corrupted is the return address on the stack and it causes the segfault since the ret instruction at address 0x00000000004012f6 uses the said corrupted return address, which leads to a jump to an invalid mem address. 
+
+-----------------------------------------------------------
+2) Instruction 1: <0x00000000004012bd +4> instruction
+   Purpose: Allocates space on the stack for local variables
+
+   Instruction 2: <0x00000000004012f5 +60> instruction
+   Purpose: Cleans up strack frame before returning from the function
+
+   Minimum length to cause a seg fault:
+   Calculation: The min length is the diffrence between the size of the allocated space on the stack and the size of the array, which should be: 0x40 - 10 * sizeof(int).
+-----------------------------------------------------------
+3) Agree or Disagree: Disagree
+   Explain: Creating an array on the heap can reduce risk of segfaults since heap has more dynamic memory,however, unlike what is stated in the claim, this does NOT eliminate the possibility of seg faults entirely. Improper memeory management such as accessing out-of-bounds memory can still lead to seg fauls even with heap allocated memeory.
+
+
+
+-----------------------------------------------------------

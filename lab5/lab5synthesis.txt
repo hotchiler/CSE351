@@ -1,0 +1,20 @@
+*****************************
+* Lab 5 Synthesis Questions *
+*****************************
+Name(s): Ali Aldhahi, Darrick Nguyen 
+NetID(s): aaldhahi, darrick7
+
+
+-----------------------------------------------------------
+1) Alignment: 16 block alightment 
+   Reasoning: The first address allocated after the malloc command is issued is always 0x8d66b0, but the address of the subsequent block varies based on what is given into the initial malloc call. The second call address for malloc(16) is 0x8d66d0, and it remains consistent with the return value until the malloc(24) call (when the minimum block size is reached). Nevertheless, this address is modified by malloc(25), and when it changes again at malloc(41), malloc(40) continues to return the updated value. Through malloc(56), it remains unchanged once more.The alignment is 16 since we may deduce that there is a pattern of address changes every 16 bytes.
+
+
+
+-----------------------------------------------------------
+2) Boundary Tag Size: 8 bytes  
+   Reasoning: After using malloc(24) for the first block address, 0x8d66b0 is what is returned. The block size is 32 bytes since there is a 32-byte difference between the two addresses. Boundary tag(s) plus payload size define block size. Given that we know the payload to be 24, the equation would be 32 - 24 = boundary tag size, requiring an 8-byte boundary tag.
+
+
+
+-----------------------------------------------------------
